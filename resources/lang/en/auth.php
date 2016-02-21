@@ -1,19 +1,10 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    // 验证语言行
+    // 以下语言行期间使用身份验证各种我们需要显示给用户的消息。
+    // 您可以自由地修改这些语言行根据应用程序的需求。
+    'failed' => '这些凭证不符合我们的记录。',
+    'throttle' => '太多的登录尝试。请再试一次 :seconds 秒。',
 
 ];

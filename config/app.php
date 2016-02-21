@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:8888/public',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/shanghai',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh_cn',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +155,9 @@ return [
         apple\Providers\AuthServiceProvider::class,
         apple\Providers\EventServiceProvider::class,
         apple\Providers\RouteServiceProvider::class,
-
+        //++
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Overtrue\LaravelLang\TranslationServiceProvider::class,
     ],
 
     /*
@@ -201,6 +203,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        //++
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
     ],
 

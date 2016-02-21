@@ -1,19 +1,10 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Pagination Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used by the paginator library to build
-    | the simple pagination links. You are free to change them to anything
-    | you want to customize your views to better match your application.
-    |
-    */
-
-    'previous' => '&laquo; Previous',
-    'next'     => 'Next &raquo;',
+    // 分页语言行
+    // 使用以下语言行paginator库构建简单的分页链接。
+    // 你可以自由地改变他们任何东西你想定制视图,以更好地满足您的应用程序。
+    'previous' => '&laquo; 上一页',
+    'next'     => '下一页 &raquo;',
 
 ];

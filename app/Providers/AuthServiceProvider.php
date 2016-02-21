@@ -16,16 +16,21 @@ class AuthServiceProvider extends ServiceProvider
         'apple\Model' => 'apple\Policies\ModelPolicy',
     ];
 
-    /**
-     * Register any application authentication / authorization services.
-     *
-     * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
-     * @return void
-     */
+    //注册任何应用程序的身份验证和授权服务
+    //@param  \Illuminate\Contracts\Auth\Access\Gate  $gate
+    //@return 无效
     public function boot(GateContract $gate)
     {
         $this->registerPolicies($gate);
-
+        // Auth::extend('riak', function($app) {
+        //   //返回一个实例Illuminate\Contracts\Auth\UserProvider...
+        //   return new RiakUserProvider($app['riak.connection']);
+        // });
+    }
+    //注册绑定的容器
+    //@return 无效
+    public function register()
+    {
         //
     }
 }

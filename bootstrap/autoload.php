@@ -15,6 +15,8 @@ define('LARAVEL_START', microtime(true));
 */
 
 require __DIR__.'/../vendor/autoload.php';
+//++
+require __DIR__.'/../app/functions.php'; // 引入自定义functions函数库
 
 /*
 |--------------------------------------------------------------------------
