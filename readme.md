@@ -151,9 +151,10 @@ MAIL_PASSWORD=null
 
 ###联系作者
 
-Email: <353484007@qq.com>  
-官网：http://qixiaojun.com
-QQ群：70897237
+Email:<353484007@qq.com>
+QQ群:70897237 QQ:353484007
+官网:http://qixiaojun.com
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=353484007&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:353484007:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
 
 
   [1]: http://qixiaojun.com/1.png
