@@ -1,4 +1,4 @@
-# 苹果CRM
+# 齐齐CRM
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
@@ -8,29 +8,29 @@
 
 
 
-> 芽丝内容管理框架( 英文简称 `ACRM` )， 基于 `Laravel 5` 开发而成，它比较适合拿来做一些小众项目开发。目前框架实现了一个简单的内容管理系统（ `CMS` ），支持多种内容模型，文章、单页、分类、碎片与标签，您现在完全可以拿它来完成一个简单的博客网站。
+> 齐齐客户关系管理系统( 英文简称 `QQCRM` )， 基于 `Laravel 5` 开发而成，它比较适合拿来做一些小众项目开发。目前框架实现了一个简单的内容管理系统（ `CMS` ），支持多种内容模型，文章、单页、分类、碎片与标签，您现在完全可以拿它来完成一个简单的博客网站。
 
-> YASCMF 已正式发布新版（基于 `Laravel 5` ），目前官方给出一个由其驱动的 [博客演示网站](http://www.yas.so) ，欢迎访问了解。
+> YASCMF 已正式发布新版（基于 `Laravel 5` ），目前官方给出一个由其驱动的 [客户关系管理系统在线演示网站](http://www.qixioajun.com) ，欢迎访问了解。
 
-欢迎加入群交流，官方QQ群：260655062 。
+欢迎加入群交流，官方QQ群：70897237 。
 
 ### 更新说明
 
-#### 2015-05-22
+#### 2016-10-01
 
 修正一些错误，更新 `AdminLTE` 到 `v2.1.1` 。
 
-#### 2015-06-11
+#### 2016-05-01
 
 更新框架到 `Laravel 5.1 TLS` ，一次升级，永不痛苦！
 
-* 注意：该版数据库表结构有些变化，建议全新安装 `YASCMF` ；  
+* 注意：该版数据库表结构有些变化，建议全新安装 `QQCRM` ；  
 * 在本系统基础上有二次开发的，请自行备份旧版进行比较，手动升级；
 * 源码根目录下提供一个从旧版升级到新版的SQL脚本 `upgrade.sql` ，可以尝试在旧有数据库中执行完成数据库表的升级，**升级前请注意备份相关数据，源码作者不保证不出任何差错**。
 
-#### 2015-07-01
+#### 2016-01-01
 
-开启 `tag releases`，发布 YASCMF `v5.1.0` 版
+开启 `tag releases`，发布 QQCRM `v5.1.0` 版
 
 * 增加文章推荐位( `flags` )，数据库结构有变动，多出 `yascmf_flags` 表，请重新导入 `yascmf_app.sql`，有二开的请自行比较数据变化，手动升级迁移；
 * 增加 `ArticleService` 类，并将内容相关的 `SLUG` 链接生成方法放置于此，模板中使用 `@inject` （Laravel 5.1 LTS新增功能）服务注入，注意本版前台模板（位于 `/resource/front` 目录）文件有较大变化，可查询对比 `commit` 记录；
@@ -93,7 +93,7 @@ MAIL_PASSWORD=null
 
 #### 前台
 
-在线演示网站为：http://www.yas.so 。
+在线演示网站为：http://www.qixiaojun.com 。
 
 ![20150426223732.jpg][1]
 
@@ -105,13 +105,13 @@ MAIL_PASSWORD=null
 #### 后台
 
 新的后台模版基于 [AdminLTE][4] ， 经过本人修改以适配当前系统 。
-`AdminLTE` 后台拥有 12 套配色皮肤，响应式布局，支持电脑、平板和手机各个终端。
+`EasyUI` 后台拥有 12 套配色皮肤，响应式布局，支持电脑、平板和手机各个终端。
 
-![20150426223913.jpg][5]
+![20150426223913.jpg][1]
 
-![20150426223938.jpg][6]
+![20150426223938.jpg][2]
 
-![20150426224002.jpg][7]
+![20150426224002.jpg][3]
 
 
 ### 源码学习
@@ -152,14 +152,14 @@ MAIL_PASSWORD=null
 ###联系作者
 
 Email: <353484007@qq.com>  
-官网：http://qixiaojun.com | http://www.qixiaojun.cn
+官网：http://qixiaojun.com
 QQ群：70897237
 
 
-  [1]: http://qixiaojun.com/usr/uploads/2015/04/3530676302.jpg
-  [2]: http://qixiaojun.com/usr/uploads/2015/04/2716073848.jpg
-  [3]: http://qixiaojun.com/usr/uploads/2015/04/913925879.jpg
+  [1]: http://qixiaojun.com/1.png
+  [2]: http://qixiaojun.com/2.png
+  [3]: http://qixiaojun.com/3.png
   [4]: https://qixiaojun.com/almasaeed2010/AdminLTE
-  [5]: http://qixiaojun.com/usr/uploads/2015/04/2937226833.jpg
-  [6]: http://qixiaojun.com/usr/uploads/2015/04/1471181251.jpg
-  [7]: http://qixiaojun.com/usr/uploads/2015/04/2433451104.jpg
+  [5]: http://qixiaojun.com/4.png
+  [6]: http://qixiaojun.com/5.png
+  [7]: http://qixiaojun.com/6.png
