@@ -1,4 +1,4 @@
-# Laravel PHP Framework
+# 苹果CRM
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
@@ -6,10 +6,9 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-# 芽丝内容管理框架(YASCMF)
 
 
-> 芽丝内容管理框架( 英文简称 `YASCMF` )， 基于 `Laravel 5` 开发而成，它比较适合拿来做一些小众项目开发。目前框架实现了一个简单的内容管理系统（ `CMS` ），支持多种内容模型，文章、单页、分类、碎片与标签，您现在完全可以拿它来完成一个简单的博客网站。
+> 芽丝内容管理框架( 英文简称 `ACRM` )， 基于 `Laravel 5` 开发而成，它比较适合拿来做一些小众项目开发。目前框架实现了一个简单的内容管理系统（ `CMS` ），支持多种内容模型，文章、单页、分类、碎片与标签，您现在完全可以拿它来完成一个简单的博客网站。
 
 > YASCMF 已正式发布新版（基于 `Laravel 5` ），目前官方给出一个由其驱动的 [博客演示网站](http://www.yas.so) ，欢迎访问了解。
 
@@ -46,7 +45,7 @@
 Linux 下可执行下面命令：
 
 ```bash
-git clone https://github.com/douyasi/yascmf.git
+git clone https://github.com/qixiaojun.com/laravel.git
 cd yascmf
 composer install
 touch .env
@@ -152,15 +151,15 @@ MAIL_PASSWORD=null
 
 ###联系作者
 
-Email: raoyc <raoyc2009@gmail.com>  
-官网：http://douyasi.com | http://www.yas.so  
-QQ群：260655062
+Email: <353484007@qq.com>  
+官网：http://qixiaojun.com | http://www.qixiaojun.cn
+QQ群：70897237
 
 
-  [1]: http://douyasi.com/usr/uploads/2015/04/3530676302.jpg
-  [2]: http://douyasi.com/usr/uploads/2015/04/2716073848.jpg
-  [3]: http://douyasi.com/usr/uploads/2015/04/913925879.jpg
-  [4]: https://github.com/almasaeed2010/AdminLTE
-  [5]: http://douyasi.com/usr/uploads/2015/04/2937226833.jpg
-  [6]: http://douyasi.com/usr/uploads/2015/04/1471181251.jpg
-  [7]: http://douyasi.com/usr/uploads/2015/04/2433451104.jpg
+  [1]: http://qixiaojun.com/usr/uploads/2015/04/3530676302.jpg
+  [2]: http://qixiaojun.com/usr/uploads/2015/04/2716073848.jpg
+  [3]: http://qixiaojun.com/usr/uploads/2015/04/913925879.jpg
+  [4]: https://qixiaojun.com/almasaeed2010/AdminLTE
+  [5]: http://qixiaojun.com/usr/uploads/2015/04/2937226833.jpg
+  [6]: http://qixiaojun.com/usr/uploads/2015/04/1471181251.jpg
+  [7]: http://qixiaojun.com/usr/uploads/2015/04/2433451104.jpg
