@@ -8,6 +8,13 @@ use apple\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Illuminate\Http\Request;
+use apple\Http\Requests;
+use Auth;
+use Hash;
+use Crypt;
+use apple\Events\UserLogin;
+use apple\Events\UserLogout;
 class AuthController extends Controller
 {
     //注册和登录控制器
@@ -37,15 +44,46 @@ class AuthController extends Controller
     }
     public function getLogin()
     {
-      # code...
+      return view('auth/login');
     }
-    public function postLogin()
+    public function postLogin(Request $request)
     {
-      # code...
+      // $email = $request->input('email');
+      // $password = $request->input('password');
+      // $date['email'] = $request->input('email');
+      // $date['password'] = $request->input('password');
+      // return $this->validator($date);
+      // return $date;
+      // $email = $request->input('email');
+      // $password = sha1($request->input('password'));
+      //认证凭证
+      $credentials = [
+          'email' => $request->input('email'),
+          'password' => $request->input('password'),
+          'user_type' => 'Manager',
+          'is_lock'=> 0,
+      ];
+      if (Auth::attempt($credentials, $request->has('remember'))) {
+          event(new UserLogin(user('object')));  //触发登录事件
+          return redirect()->intended(route('admin'));
+      } else {
+          // 登录失败，跳回
+          return redirect()->back()
+                           ->withInput()
+                           ->withErrors(array('attempt' => '“用户名”或“密码”错误，请重新登录！'));  //回传错误信息
+      }
+      // if (Auth::attempt(['email' => $email, 'password' => $password]))
+      // {
+      //     // return redirect()->intended('dashboard');
+      //   return 'true';
+      // }else{
+      //   //Auth::login(1);
+      //   return 'false';
+      // }
     }
     public function getLogout()
     {
-      # code...
+      return Auth::logout();
     }
     public function authenticate(Request $request)
     {

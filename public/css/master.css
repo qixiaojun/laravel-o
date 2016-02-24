@@ -1,4 +1,7 @@
-#main{
-  width: 600px;
-  height:400px;
+/*app.blade.php*/
+body {
+    font-family: 'Lato';
+}
+.fa-btn {
+    margin-right: 6px;
 }

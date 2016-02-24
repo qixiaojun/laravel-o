@@ -4,12 +4,15 @@ namespace apple;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-//Model implements AuthenticatableContract,AuthorizableContract,CanResetPasswordContract
+// use Illuminate\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    //use Authenticatable, Authorizable, CanResetPassword;
-    // 这个属性是多个快转让的
-    // @var array
+    use Authenticatable, CanResetPassword;
     protected $fillable = [
         'name', 'email', 'password',
     ];

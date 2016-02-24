@@ -16,15 +16,12 @@
     @section('css')
     @show{{-- head区域css样式表 --}}
 
-    @section('js')
-    @show{{-- head区域javscript脚本 --}}
-
     @section('style')
     @show{{-- head区域内联css样式表 --}}
 
 </head>
-<body @section('body_attr')class=""@show{{-- 追加类属性 --}}>
-{{--  id="example" class="started" ontouchstart="" --}}
+<body @section('body_attr')class=""@show>
+{{--  id="example" class="started" ontouchstart="" 追加类ID属性--}}
     @section('beforeBody')
     @show{{--在正文之后填充一些东西 --}}
 
@@ -34,6 +31,8 @@
     @section('afterBody')
     @show{{-- 在正文之后填充一些东西，比如统计代码之类的东东 --}}
 
+    @section('js')
+    @show{{-- body区域javscript脚本 --}}
 </body>
 </html>
 @section('footer')

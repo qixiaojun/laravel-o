@@ -23,20 +23,24 @@ Route::group(['middleware' => ['web']], function () {
 //后台路由
 // Route::delete('/task/{task}', 'TaskController@destroy');
 Route::get('/admin','Admin\AdminController@index');
-Route::group(['prefix' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
   Route::get('/','Admin\AdminController@index');
 });
 
 //任务路由
-Route::get('/tasks', 'TaskController@index');
-Route::post('/task', 'TaskController@store');
-Route::delete('/task/{task}', 'TaskController@destroy');
+// Route::get('/tasks', 'TaskController@index');
+// Route::post('/task', 'TaskController@store');
+// Route::delete('/task/{task}', 'TaskController@destroy');
 
 //权限验证路由
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::group(['prefix' => 'auth'], function () {
+  Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+  Route::post('login', 'Auth\AuthController@postLogin');
+  Route::get('register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
+  Route::post('register', 'Auth\AuthController@postRegister');
+  Route::get('logout', 'Auth\AuthController@getLogout');
+});
 // Route::get('/admin/auth','Admin\AuthController@redirectToProvider');
 // Route::get('/admin/callback','Admin\AuthController@handleProviderCallback');
 //注册用户路由
