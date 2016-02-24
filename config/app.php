@@ -157,7 +157,7 @@ return [
         apple\Providers\RouteServiceProvider::class,
         //++
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Overtrue\LaravelLang\TranslationServiceProvider::class,
+        //Overtrue\LaravelLang\TranslationServiceProvider::class,
     ],
 
     /*
