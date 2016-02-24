@@ -1,4 +1,33 @@
 composer require barryvdh/laravel-debugbar
 Barryvdh\Debugbar\ServiceProvider::class,
+
 'Debugbar' => Barryvdh\Debugbar\Facade::class,
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+
+
+"laravel/socialite": "~2.0",
+'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+
+https://phphub.org/topics/1792
+"dingo/api": "1.0.*dev",
+"lucadegasperi/oauth2-server-laravel": "5.1.*",
+Dingo\Api\Provider\LaravelServiceProvider::class,
+LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
+
+'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+
+\LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class,
+'oauth' => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class,
+'oauth-user' => \LucaDegasperi\OAuth2Server\Middleware\OAuthUserOwnerMiddleware::class,
+'oauth-client' => \LucaDegasperi\OAuth2Server\Middleware\OAuthClientOwnerMiddleware::class,
+'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
+API_STANDARDS_TREE=x
+API_SUBTYPE=rest
+API_NAME=REST
+API_PREFIX=api
+API_VERSION=v1
+API_CONDITIONAL_REQUEST=true
+API_STRICT=false
+API_DEBUG=true
+API_DEFAULT_FORMAT=json
