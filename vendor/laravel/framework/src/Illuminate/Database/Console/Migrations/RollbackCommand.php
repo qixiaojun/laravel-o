@@ -23,7 +23,7 @@ class RollbackCommand extends Command
      *
      * @var string
      */
-    protected $description = '回滚数据库迁移';
+    protected $description = 'Rollback the last database migration';
 
     /**
      * The migrator instance.
@@ -78,11 +78,11 @@ class RollbackCommand extends Command
     protected function getOptions()
     {
         return [
-            ['database', null, InputOption::VALUE_OPTIONAL, '要使用的数据库连接。'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'],
 
-            ['force', null, InputOption::VALUE_NONE, '在生产时力的操作运行。'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
 
-            ['pretend', null, InputOption::VALUE_NONE, '转储将运行的SQL查询。'],
+            ['pretend', null, InputOption::VALUE_NONE, 'Dump the SQL queries that would be run.'],
         ];
     }
 }

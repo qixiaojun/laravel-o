@@ -20,7 +20,7 @@ class RetryCommand extends Command
      *
      * @var string
      */
-    protected $description = '重试队列失败的工作';
+    protected $description = 'Retry a failed queue job';
 
     /**
      * Execute the console command.
@@ -60,9 +60,9 @@ class RetryCommand extends Command
 
             $this->laravel['queue.failer']->forget($failed->id);
 
-            $this->info("失败的工作 [{$id}] 已经推迟到队列!");
+            $this->info("The failed job [{$id}] has been pushed back onto the queue!");
         } else {
-            $this->error("没有失败的工作匹配给定的ID [{$id}].");
+            $this->error("No failed job matches the given ID [{$id}].");
         }
     }
 
@@ -91,7 +91,7 @@ class RetryCommand extends Command
     protected function getArguments()
     {
         return [
-            ['id', InputArgument::IS_ARRAY, '失败的工作的ID'],
+            ['id', InputArgument::IS_ARRAY, 'The ID of the failed job'],
         ];
     }
 }

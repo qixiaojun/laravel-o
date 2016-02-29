@@ -24,7 +24,7 @@ class SeedCommand extends Command
      *
      * @var string
      */
-    protected $description = '生成数据库种子记录';
+    protected $description = 'Seed the database with records';
 
     /**
      * The connection resolver instance.
@@ -96,11 +96,11 @@ class SeedCommand extends Command
     protected function getOptions()
     {
         return [
-            ['class', null, InputOption::VALUE_OPTIONAL, '的类名根播种机', 'DatabaseSeeder'],
+            ['class', null, InputOption::VALUE_OPTIONAL, 'The class name of the root seeder', 'DatabaseSeeder'],
 
-            ['database', null, InputOption::VALUE_OPTIONAL, '种子的数据库连接'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to seed'],
 
-            ['force', null, InputOption::VALUE_NONE, '在生产时力的操作运行。'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
         ];
     }
 }

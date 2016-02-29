@@ -19,7 +19,7 @@ class ForgetFailedCommand extends Command
      *
      * @var string
      */
-    protected $description = '删除队列失败的工作';
+    protected $description = 'Delete a failed queue job';
 
     /**
      * Execute the console command.
@@ -31,7 +31,7 @@ class ForgetFailedCommand extends Command
         if ($this->laravel['queue.failer']->forget($this->argument('id'))) {
             $this->info('Failed job deleted successfully!');
         } else {
-            $this->error('没有失败的工作匹配给定的ID。');
+            $this->error('No failed job matches the given ID.');
         }
     }
 
@@ -43,7 +43,7 @@ class ForgetFailedCommand extends Command
     protected function getArguments()
     {
         return [
-            ['id', InputArgument::REQUIRED, '失败的工作的ID'],
+            ['id', InputArgument::REQUIRED, 'The ID of the failed job'],
         ];
     }
 }

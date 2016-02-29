@@ -18,7 +18,7 @@ class FlushFailedCommand extends Command
      *
      * @var string
      */
-    protected $description = '冲洗所有失败的队列的工作';
+    protected $description = 'Flush all of the failed queue jobs';
 
     /**
      * Execute the console command.
@@ -29,6 +29,6 @@ class FlushFailedCommand extends Command
     {
         $this->laravel['queue.failer']->flush();
 
-        $this->info('所有失败的工作成功删除!');
+        $this->info('All failed jobs deleted successfully!');
     }
 }

@@ -22,7 +22,7 @@ class RefreshCommand extends Command
      *
      * @var string
      */
-    protected $description = '重置所有迁移和重新运行';
+    protected $description = 'Reset and re-run all migrations';
 
     /**
      * Execute the console command.
@@ -94,15 +94,15 @@ class RefreshCommand extends Command
     protected function getOptions()
     {
         return [
-            ['database', null, InputOption::VALUE_OPTIONAL, '要使用的数据库连接。'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'],
 
-            ['force', null, InputOption::VALUE_NONE, '在生产时力的操作运行。'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
 
-            ['path', null, InputOption::VALUE_OPTIONAL, '执行迁移文件的路径。'],
+            ['path', null, InputOption::VALUE_OPTIONAL, 'The path of migrations files to be executed.'],
 
-            ['seed', null, InputOption::VALUE_NONE, '表明如果种子任务应该重新运行。'],
+            ['seed', null, InputOption::VALUE_NONE, 'Indicates if the seed task should be re-run.'],
 
-            ['seeder', null, InputOption::VALUE_OPTIONAL, '根播种机的类名。'],
+            ['seeder', null, InputOption::VALUE_OPTIONAL, 'The class name of the root seeder.'],
         ];
     }
 }

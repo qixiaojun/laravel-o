@@ -18,7 +18,7 @@ class RestartCommand extends Command
      *
      * @var string
      */
-    protected $description = '重新启动队列工人守护进程在他们目前的工作';
+    protected $description = 'Restart queue worker daemons after their current job';
 
     /**
      * Execute the console command.
@@ -29,6 +29,6 @@ class RestartCommand extends Command
     {
         $this->laravel['cache']->forever('illuminate:queue:restart', time());
 
-        $this->info('广播队列重新启动信号。');
+        $this->info('Broadcasting queue restart signal.');
     }
 }

@@ -20,7 +20,7 @@ class ModelMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的Eloquent(有说服力的)模型类';
+    protected $description = 'Create a new Eloquent model class';
 
     /**
      * The type of class being generated.
@@ -74,7 +74,7 @@ class ModelMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['migration', 'm', InputOption::VALUE_NONE, '创建一个新的迁移文件模型。'],
+            ['migration', 'm', InputOption::VALUE_NONE, 'Create a new migration file for the model.'],
         ];
     }
 }

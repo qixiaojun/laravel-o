@@ -424,7 +424,7 @@ class Application
     public function getNamespaces()
     {
         $namespaces = array();
-        foreach ($this->commands as $command) {
+        foreach ($this->all() as $command) {
             $namespaces = array_merge($namespaces, $this->extractAllNamespaces($command->getName()));
 
             foreach ($command->getAliases() as $alias) {
@@ -846,15 +846,15 @@ class Application
     protected function getDefaultInputDefinition()
     {
         return new InputDefinition(array(
-            new InputArgument('command', InputArgument::REQUIRED, '要执行的命令'),
+            new InputArgument('command', InputArgument::REQUIRED, 'The command to execute'),
 
-            new InputOption('--help', '-h', InputOption::VALUE_NONE, '显示帮助信息'),
-            new InputOption('--quiet', '-q', InputOption::VALUE_NONE, '不输出任何消息'),
-            new InputOption('--verbose', '-v|vv|vvv', InputOption::VALUE_NONE, '增加了冗长的消息:1为正常输出,2为调试更详细的输出和3'),
-            new InputOption('--version', '-V', InputOption::VALUE_NONE, '显示这个应用程序版本'),
-            new InputOption('--ansi', '', InputOption::VALUE_NONE, '强制使用ANSI输出'),
-            new InputOption('--no-ansi', '', InputOption::VALUE_NONE, '禁用ANSI输出'),
-            new InputOption('--no-interaction', '-n', InputOption::VALUE_NONE, '不要问任何互动问题'),
+            new InputOption('--help', '-h', InputOption::VALUE_NONE, 'Display this help message'),
+            new InputOption('--quiet', '-q', InputOption::VALUE_NONE, 'Do not output any message'),
+            new InputOption('--verbose', '-v|vv|vvv', InputOption::VALUE_NONE, 'Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug'),
+            new InputOption('--version', '-V', InputOption::VALUE_NONE, 'Display this application version'),
+            new InputOption('--ansi', '', InputOption::VALUE_NONE, 'Force ANSI output'),
+            new InputOption('--no-ansi', '', InputOption::VALUE_NONE, 'Disable ANSI output'),
+            new InputOption('--no-interaction', '-n', InputOption::VALUE_NONE, 'Do not ask any interactive question'),
         ));
     }
 

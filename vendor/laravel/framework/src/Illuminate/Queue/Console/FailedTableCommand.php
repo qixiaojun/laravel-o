@@ -21,7 +21,7 @@ class FailedTableCommand extends Command
      *
      * @var string
      */
-    protected $description = '创建一个数据库表迁移队列失败的工作';
+    protected $description = 'Create a migration for the failed queue jobs database table';
 
     /**
      * The filesystem instance.
@@ -69,7 +69,7 @@ class FailedTableCommand extends Command
 
         $this->files->put($fullPath, $stub);
 
-        $this->info('迁移创建成功!');
+        $this->info('Migration created successfully!');
 
         $this->composer->dumpAutoloads();
     }

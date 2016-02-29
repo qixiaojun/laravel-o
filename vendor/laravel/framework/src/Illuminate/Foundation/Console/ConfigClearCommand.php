@@ -19,7 +19,7 @@ class ConfigClearCommand extends Command
      *
      * @var string
      */
-    protected $description = '删除缓存文件的配置';
+    protected $description = 'Remove the configuration cache file';
 
     /**
      * The filesystem instance.
@@ -50,6 +50,6 @@ class ConfigClearCommand extends Command
     {
         $this->files->delete($this->laravel->getCachedConfigPath());
 
-        $this->info('配置缓存已清除!');
+        $this->info('Configuration cache cleared!');
     }
 }

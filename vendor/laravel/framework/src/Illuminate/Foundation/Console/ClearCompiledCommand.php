@@ -18,7 +18,7 @@ class ClearCompiledCommand extends Command
      *
      * @var string
      */
-    protected $description = '删除编译后的类文件';
+    protected $description = 'Remove the compiled class file';
 
     /**
      * Execute the console command.

@@ -20,7 +20,7 @@ class ConsoleMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的Artisan(工匠)命令';
+    protected $description = 'Create a new Artisan command';
 
     /**
      * The type of class being generated.
@@ -72,7 +72,7 @@ class ConsoleMakeCommand extends GeneratorCommand
     protected function getArguments()
     {
         return [
-            ['name', InputArgument::REQUIRED, '命令的名称。'],
+            ['name', InputArgument::REQUIRED, 'The name of the command.'],
         ];
     }
 
@@ -84,7 +84,7 @@ class ConsoleMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['command', null, InputOption::VALUE_OPTIONAL, '终端命令应该分配。', 'command:name'],
+            ['command', null, InputOption::VALUE_OPTIONAL, 'The terminal command that should be assigned.', 'command:name'],
         ];
     }
 }

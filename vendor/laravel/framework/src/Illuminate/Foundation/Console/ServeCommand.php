@@ -22,7 +22,7 @@ class ServeCommand extends Command
      *
      * @var string
      */
-    protected $description = '服务应用程序在PHP开发服务器上';
+    protected $description = 'Serve the application on the PHP development server';
 
     /**
      * Execute the console command.
@@ -43,13 +43,13 @@ class ServeCommand extends Command
 
         $binary = ProcessUtils::escapeArgument((new PhpExecutableFinder)->find(false));
 
-        $this->info("Laravel开发服务器在 http://{$host}:{$port}/ 上启动");
+        $this->info("Laravel development server started on http://{$host}:{$port}/");
 
         if (defined('HHVM_VERSION')) {
             if (version_compare(HHVM_VERSION, '3.8.0') >= 0) {
                 passthru("{$binary} -m server -v Server.Type=proxygen -v Server.SourceRoot={$base}/ -v Server.IP={$host} -v Server.Port={$port} -v Server.DefaultDocument=server.php -v Server.ErrorDocument404=server.php");
             } else {
-                throw new Exception("HHVM's 内置服务器需要 HHVM >= 3.8.0.");
+                throw new Exception("HHVM's built-in server requires HHVM >= 3.8.0.");
             }
         } else {
             passthru("{$binary} -S {$host}:{$port} {$base}/server.php");
@@ -64,9 +64,9 @@ class ServeCommand extends Command
     protected function getOptions()
     {
         return [
-            ['host', null, InputOption::VALUE_OPTIONAL, '服务应用程序的主机地址。', 'localhost'],
+            ['host', null, InputOption::VALUE_OPTIONAL, 'The host address to serve the application on.', 'localhost'],
 
-            ['port', null, InputOption::VALUE_OPTIONAL, '服务应用程序的端口号。', 8000],
+            ['port', null, InputOption::VALUE_OPTIONAL, 'The port to serve the application on.', 8000],
         ];
     }
 }

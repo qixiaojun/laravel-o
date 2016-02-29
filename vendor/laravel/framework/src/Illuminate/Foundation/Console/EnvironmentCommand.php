@@ -18,7 +18,7 @@ class EnvironmentCommand extends Command
      *
      * @var string
      */
-    protected $description = '显示当前框架运行的环境';
+    protected $description = 'Display the current framework environment';
 
     /**
      * Execute the console command.
@@ -27,6 +27,6 @@ class EnvironmentCommand extends Command
      */
     public function fire()
     {
-        $this->line('<info>当前应用程序环境:</info> <comment>'.$this->laravel['env'].'</comment>');
+        $this->line('<info>Current application environment:</info> <comment>'.$this->laravel['env'].'</comment>');
     }
 }

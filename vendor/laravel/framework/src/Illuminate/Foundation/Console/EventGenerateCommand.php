@@ -19,7 +19,7 @@ class EventGenerateCommand extends Command
      *
      * @var string
      */
-    protected $description = '生成基于登记失踪事件和监听器';
+    protected $description = 'Generate the missing events and listeners based on registration';
 
     /**
      * Execute the console command.
@@ -46,6 +46,6 @@ class EventGenerateCommand extends Command
             }
         }
 
-        $this->info('事件和监听器生成成功!');
+        $this->info('Events and listeners generated successfully!');
     }
 }

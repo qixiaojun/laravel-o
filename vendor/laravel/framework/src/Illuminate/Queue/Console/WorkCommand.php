@@ -23,7 +23,7 @@ class WorkCommand extends Command
      *
      * @var string
      */
-    protected $description = '处理队列的下一份工作';
+    protected $description = 'Process the next job on a queue';
 
     /**
      * The queue worker instance.
@@ -120,9 +120,9 @@ class WorkCommand extends Command
     protected function writeOutput(Job $job, $failed)
     {
         if ($failed) {
-            $this->output->writeln('<error>['.Carbon::now()->format('Y-m-d H:i:s').'] 失败的:</error> '.$job->getName());
+            $this->output->writeln('<error>['.Carbon::now()->format('Y-m-d H:i:s').'] Failed:</error> '.$job->getName());
         } else {
-            $this->output->writeln('<info>['.Carbon::now()->format('Y-m-d H:i:s').'] 加工过的:</info> '.$job->getName());
+            $this->output->writeln('<info>['.Carbon::now()->format('Y-m-d H:i:s').'] Processed:</info> '.$job->getName());
         }
     }
 
@@ -148,7 +148,7 @@ class WorkCommand extends Command
     protected function getArguments()
     {
         return [
-            ['connection', InputArgument::OPTIONAL, '连接的名字', null],
+            ['connection', InputArgument::OPTIONAL, 'The name of connection', null],
         ];
     }
 
@@ -160,19 +160,19 @@ class WorkCommand extends Command
     protected function getOptions()
     {
         return [
-            ['queue', null, InputOption::VALUE_OPTIONAL, '监听的队列'],
+            ['queue', null, InputOption::VALUE_OPTIONAL, 'The queue to listen on'],
 
-            ['daemon', null, InputOption::VALUE_NONE, '工人在守护进程模式下运行'],
+            ['daemon', null, InputOption::VALUE_NONE, 'Run the worker in daemon mode'],
 
-            ['delay', null, InputOption::VALUE_OPTIONAL, '推迟失败的工作的时间', 0],
+            ['delay', null, InputOption::VALUE_OPTIONAL, 'Amount of time to delay failed jobs', 0],
 
-            ['force', null, InputOption::VALUE_NONE, '强迫工人甚至在维护模式下运行'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the worker to run even in maintenance mode'],
 
-            ['memory', null, InputOption::VALUE_OPTIONAL, '兆字节的内存限制', 128],
+            ['memory', null, InputOption::VALUE_OPTIONAL, 'The memory limit in megabytes', 128],
 
-            ['sleep', null, InputOption::VALUE_OPTIONAL, '的秒数没有可用的工作时睡觉', 3],
+            ['sleep', null, InputOption::VALUE_OPTIONAL, 'Number of seconds to sleep when no job is available', 3],
 
-            ['tries', null, InputOption::VALUE_OPTIONAL, '多次尝试工作日志之前失败了', 0],
+            ['tries', null, InputOption::VALUE_OPTIONAL, 'Number of times to attempt a job before logging it failed', 0],
         ];
     }
 }

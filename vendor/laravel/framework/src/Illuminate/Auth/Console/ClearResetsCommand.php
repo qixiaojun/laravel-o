@@ -11,14 +11,14 @@ class ClearResetsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'auth:clear-resets {name? : 代理的名称密码}';
+    protected $signature = 'auth:clear-resets {name? : The name of the password broker}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '刷新过期密码重置令牌';
+    protected $description = 'Flush expired password reset tokens';
 
     /**
      * Execute the console command.
@@ -29,6 +29,6 @@ class ClearResetsCommand extends Command
     {
         $this->laravel['auth.password']->broker($this->argument('name'))->getRepository()->deleteExpired();
 
-        $this->info('重置令牌到期了!');
+        $this->info('Expired reset tokens cleared!');
     }
 }

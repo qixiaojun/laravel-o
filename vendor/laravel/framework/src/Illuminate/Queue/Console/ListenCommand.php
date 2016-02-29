@@ -21,7 +21,7 @@ class ListenCommand extends Command
      *
      * @var string
      */
-    protected $description = '监听一个给定队列';
+    protected $description = 'Listen to a given queue';
 
     /**
      * The queue listener instance.
@@ -116,7 +116,7 @@ class ListenCommand extends Command
     protected function getArguments()
     {
         return [
-            ['connection', InputArgument::OPTIONAL, '连接的名字'],
+            ['connection', InputArgument::OPTIONAL, 'The name of connection'],
         ];
     }
 
@@ -128,17 +128,17 @@ class ListenCommand extends Command
     protected function getOptions()
     {
         return [
-            ['queue', null, InputOption::VALUE_OPTIONAL, '监听的队列', null],
+            ['queue', null, InputOption::VALUE_OPTIONAL, 'The queue to listen on', null],
 
-            ['delay', null, InputOption::VALUE_OPTIONAL, '推迟失败的工作的时间', 0],
+            ['delay', null, InputOption::VALUE_OPTIONAL, 'Amount of time to delay failed jobs', 0],
 
-            ['memory', null, InputOption::VALUE_OPTIONAL, '兆字节的内存限制', 128],
+            ['memory', null, InputOption::VALUE_OPTIONAL, 'The memory limit in megabytes', 128],
 
-            ['timeout', null, InputOption::VALUE_OPTIONAL, '秒之前可能会超时工作', 60],
+            ['timeout', null, InputOption::VALUE_OPTIONAL, 'Seconds a job may run before timing out', 60],
 
-            ['sleep', null, InputOption::VALUE_OPTIONAL, '秒前检查队列等待工作', 3],
+            ['sleep', null, InputOption::VALUE_OPTIONAL, 'Seconds to wait before checking queue for jobs', 3],
 
-            ['tries', null, InputOption::VALUE_OPTIONAL, '多次尝试工作日志之前失败了', 0],
+            ['tries', null, InputOption::VALUE_OPTIONAL, 'Number of times to attempt a job before logging it failed', 0],
         ];
     }
 }

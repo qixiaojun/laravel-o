@@ -181,8 +181,8 @@ class TextDescriptor extends Descriptor
                 $this->writeText("$help\n\n", $options);
             }
 
-            $this->writeText("<comment>使用:</comment>\n", $options);
-            $this->writeText("  命令 [选项] [参数]\n\n", $options);
+            $this->writeText("<comment>Usage:</comment>\n", $options);
+            $this->writeText("  command [options] [arguments]\n\n", $options);
 
             $this->describeInputDefinition(new InputDefinition($application->getDefinition()->getOptions()), $options);
 

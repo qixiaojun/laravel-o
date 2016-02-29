@@ -18,7 +18,7 @@ class PolicyMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的策略类';
+    protected $description = 'Create a new policy class';
 
     /**
      * The type of class being generated.

@@ -21,7 +21,7 @@ class TableCommand extends Command
      *
      * @var string
      */
-    protected $description = '数据库表为队列创建一个迁移工作';
+    protected $description = 'Create a migration for the queue jobs database table';
 
     /**
      * The filesystem instance.
@@ -69,7 +69,7 @@ class TableCommand extends Command
 
         $this->files->put($fullPath, $stub);
 
-        $this->info('迁移创建成功!');
+        $this->info('Migration created successfully!');
 
         $this->composer->dumpAutoloads();
     }

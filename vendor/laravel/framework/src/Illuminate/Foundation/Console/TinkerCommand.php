@@ -30,7 +30,7 @@ class TinkerCommand extends Command
      *
      * @var string
      */
-    protected $description = '与应用程序交互';
+    protected $description = 'Interact with your application';
 
     /**
      * Execute the console command.
@@ -94,7 +94,7 @@ class TinkerCommand extends Command
     protected function getArguments()
     {
         return [
-            ['include', InputArgument::IS_ARRAY, '包含文件(s)开始前修改'],
+            ['include', InputArgument::IS_ARRAY, 'Include file(s) before starting tinker'],
         ];
     }
 }

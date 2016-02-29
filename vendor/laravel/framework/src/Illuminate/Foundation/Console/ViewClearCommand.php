@@ -19,7 +19,7 @@ class ViewClearCommand extends Command
      *
      * @var string
      */
-    protected $description = '清除所有已编译的视图文件';
+    protected $description = 'Clear all compiled view files';
 
     /**
      * The filesystem instance.
@@ -54,6 +54,6 @@ class ViewClearCommand extends Command
             $this->files->delete($view);
         }
 
-        $this->info('编译的视图清除了!');
+        $this->info('Compiled views cleared!');
     }
 }

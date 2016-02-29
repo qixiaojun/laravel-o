@@ -155,7 +155,7 @@ class Application extends SymfonyApplication implements ApplicationContract
      */
     protected function getEnvironmentOption()
     {
-        $message = '环境下应该运行的命令。';
+        $message = 'The environment the command should run under.';
 
         return new InputOption('--env', null, InputOption::VALUE_OPTIONAL, $message);
     }

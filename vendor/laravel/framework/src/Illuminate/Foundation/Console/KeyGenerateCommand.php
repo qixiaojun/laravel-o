@@ -20,7 +20,7 @@ class KeyGenerateCommand extends Command
      *
      * @var string
      */
-    protected $description = '设置应用程序的键';
+    protected $description = 'Set the application key';
 
     /**
      * Execute the console command.
@@ -38,14 +38,18 @@ class KeyGenerateCommand extends Command
         $path = base_path('.env');
 
         if (file_exists($path)) {
-            file_put_contents($path, str_replace(
-                'APP_KEY='.$this->laravel['config']['app.key'], 'APP_KEY='.$key, file_get_contents($path)
-            ));
+            $content = str_replace('APP_KEY='.$this->laravel['config']['app.key'], 'APP_KEY='.$key, file_get_contents($path));
+
+            if (! Str::contains($content, 'APP_KEY')) {
+                $content = sprintf("%s\nAPP_KEY=%s\n", $content, $key);
+            }
+
+            file_put_contents($path, $content);
         }
 
         $this->laravel['config']['app.key'] = $key;
 
-        $this->info("应用程序的键 [$key] 已成功设置。");
+        $this->info("Application key [$key] set successfully.");
     }
 
     /**
@@ -71,7 +75,7 @@ class KeyGenerateCommand extends Command
     protected function getOptions()
     {
         return [
-            ['show', null, InputOption::VALUE_NONE, '只是显示的关键,而不是修改文件。'],
+            ['show', null, InputOption::VALUE_NONE, 'Simply display the key instead of modifying files.'],
         ];
     }
 }

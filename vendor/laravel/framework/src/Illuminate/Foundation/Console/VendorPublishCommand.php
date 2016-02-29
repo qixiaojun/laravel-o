@@ -21,18 +21,18 @@ class VendorPublishCommand extends Command
     /**
      * The console command signature.
      *
-     * @var string服务提供者,您想发布的那有资产。
+     * @var string
      */
-    protected $signature = 'vendor:publish {--force : 覆盖任何现有的文件。}
-            {--provider= : 服务提供者您想发布的资产。}
-            {--tag=* : 一个或多个资产你想发布的标签。}';
+    protected $signature = 'vendor:publish {--force : Overwrite any existing files.}
+            {--provider= : The service provider that has assets you want to publish.}
+            {--tag=* : One or many tags that have assets you want to publish.}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '发布任何供应商包可发布的资产';
+    protected $description = 'Publish any publishable assets from vendor packages';
 
     /**
      * Create a new command instance.
@@ -76,7 +76,7 @@ class VendorPublishCommand extends Command
         );
 
         if (empty($paths)) {
-            return $this->comment("没有发布标签 [{$tag}].");
+            return $this->comment("Nothing to publish for tag [{$tag}].");
         }
 
         foreach ($paths as $from => $to) {
@@ -85,11 +85,11 @@ class VendorPublishCommand extends Command
             } elseif ($this->files->isDirectory($from)) {
                 $this->publishDirectory($from, $to);
             } else {
-                $this->error("无法定位路径: <{$from}>");
+                $this->error("Can't locate path: <{$from}>");
             }
         }
 
-        $this->info("发布完整的标签 [{$tag}]!");
+        $this->info("Publishing complete for tag [{$tag}]!");
     }
 
     /**
@@ -162,6 +162,6 @@ class VendorPublishCommand extends Command
 
         $to = str_replace(base_path(), '', realpath($to));
 
-        $this->line('<info>复制 '.$type.'</info> <comment>['.$from.']</comment> <info>到</info> <comment>['.$to.']</comment>');
+        $this->line('<info>Copied '.$type.'</info> <comment>['.$from.']</comment> <info>To</info> <comment>['.$to.']</comment>');
     }
 }

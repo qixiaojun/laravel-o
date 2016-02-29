@@ -18,7 +18,7 @@ class TestMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的测试类';
+    protected $description = 'Create a new test class';
 
     /**
      * The type of class being generated.

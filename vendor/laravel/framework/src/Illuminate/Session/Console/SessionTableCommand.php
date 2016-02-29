@@ -20,7 +20,7 @@ class SessionTableCommand extends Command
      *
      * @var string
      */
-    protected $description = '为session(会话)创建迁移数据库表';
+    protected $description = 'Create a migration for the session database table';
 
     /**
      * The filesystem instance.
@@ -60,7 +60,7 @@ class SessionTableCommand extends Command
 
         $this->files->put($fullPath, $this->files->get(__DIR__.'/stubs/database.stub'));
 
-        $this->info('迁移创建成功!');
+        $this->info('Migration created successfully!');
 
         $this->composer->dumpAutoloads();
     }

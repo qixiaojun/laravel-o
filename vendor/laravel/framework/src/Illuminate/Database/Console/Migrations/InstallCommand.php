@@ -20,7 +20,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = '创建迁移库';
+    protected $description = 'Create the migration repository';
 
     /**
      * The repository instance.
@@ -53,7 +53,7 @@ class InstallCommand extends Command
 
         $this->repository->createRepository();
 
-        $this->info('迁移创建的表成功。');
+        $this->info('Migration table created successfully.');
     }
 
     /**
@@ -64,7 +64,7 @@ class InstallCommand extends Command
     protected function getOptions()
     {
         return [
-            ['database', null, InputOption::VALUE_OPTIONAL, '要使用的数据库连接。'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'],
         ];
     }
 }

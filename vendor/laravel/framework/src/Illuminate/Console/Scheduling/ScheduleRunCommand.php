@@ -18,7 +18,7 @@ class ScheduleRunCommand extends Command
      *
      * @var string
      */
-    protected $description = '运行调度命令';
+    protected $description = 'Run the scheduled commands';
 
     /**
      * The schedule instance.
@@ -56,7 +56,7 @@ class ScheduleRunCommand extends Command
                 continue;
             }
 
-            $this->line('<info>运行调度命令:</info> '.$event->getSummaryForDisplay());
+            $this->line('<info>Running scheduled command:</info> '.$event->getSummaryForDisplay());
 
             $event->run($this->laravel);
 
@@ -64,7 +64,7 @@ class ScheduleRunCommand extends Command
         }
 
         if (count($events) === 0 || $eventsRan === 0) {
-            $this->info('没有预定的命令已经准备好运行。');
+            $this->info('No scheduled commands are ready to run.');
         }
     }
 }

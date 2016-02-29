@@ -19,7 +19,7 @@ class StatusCommand extends BaseCommand
      *
      * @var string
      */
-    protected $description = '显示每个迁移的状态';
+    protected $description = 'Show the status of each migration';
 
     /**
      * The migrator instance.
@@ -49,7 +49,7 @@ class StatusCommand extends BaseCommand
     public function fire()
     {
         if (! $this->migrator->repositoryExists()) {
-            return $this->error('没有找到迁移。');
+            return $this->error('No migrations found.');
         }
 
         $this->migrator->setConnection($this->input->getOption('database'));
@@ -65,13 +65,13 @@ class StatusCommand extends BaseCommand
         $migrations = [];
 
         foreach ($this->getAllMigrationFiles($path) as $migration) {
-            $migrations[] = in_array($migration, $ran) ? ['<info>是</info>', $migration] : ['<fg=red>否</fg=red>', $migration];
+            $migrations[] = in_array($migration, $ran) ? ['<info>Y</info>', $migration] : ['<fg=red>N</fg=red>', $migration];
         }
 
         if (count($migrations) > 0) {
-            $this->table(['跑?', '迁移'], $migrations);
+            $this->table(['Ran?', 'Migration'], $migrations);
         } else {
-            $this->error('没有找到迁移。');
+            $this->error('No migrations found');
         }
     }
 
@@ -94,9 +94,9 @@ class StatusCommand extends BaseCommand
     protected function getOptions()
     {
         return [
-            ['database', null, InputOption::VALUE_OPTIONAL, '要使用的数据库连接。'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'],
 
-            ['path', null, InputOption::VALUE_OPTIONAL, '使用迁移文件的路径。'],
+            ['path', null, InputOption::VALUE_OPTIONAL, 'The path of migrations files to use.'],
         ];
     }
 }

@@ -19,7 +19,7 @@ class ControllerMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的控制器类';
+    protected $description = 'Create a new controller class';
 
     /**
      * The type of class being generated.
@@ -61,7 +61,22 @@ class ControllerMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['resource', null, InputOption::VALUE_NONE, '生成一个资源控制器类。'],
+            ['resource', null, InputOption::VALUE_NONE, 'Generate a resource controller class.'],
         ];
+    }
+
+    /**
+     * Build the class with the given name.
+     *
+     * Remove the base controller import if we are already in base namespace.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    protected function buildClass($name)
+    {
+        $namespace = $this->getNamespace($name);
+
+        return str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
     }
 }

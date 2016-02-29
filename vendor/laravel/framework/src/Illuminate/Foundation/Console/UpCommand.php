@@ -18,7 +18,7 @@ class UpCommand extends Command
      *
      * @var string
      */
-    protected $description = '把应用程序退出维护模式';
+    protected $description = 'Bring the application out of maintenance mode';
 
     /**
      * Execute the console command.
@@ -29,6 +29,6 @@ class UpCommand extends Command
     {
         @unlink($this->laravel->storagePath().'/framework/down');
 
-        $this->info('应用程序现在在线了。');
+        $this->info('Application is now live.');
     }
 }

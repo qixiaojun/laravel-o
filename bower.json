@@ -1,0 +1,29 @@
+{
+  "name": "laravel",
+  "description": "laravel bower",
+  "main": "",
+  "authors": [
+    "齐小君 <353484007@qq.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bower"
+  ],
+  "homepage": "https://github.com/qixiaojun/laravel",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/asset/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "underscore": "^1.8.3",
+    "modernizr": "^3.3.1",
+    "backbone": "^1.2.3"
+  }
+}

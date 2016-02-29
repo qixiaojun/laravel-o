@@ -20,7 +20,7 @@ class SeederMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的播种机类';
+    protected $description = 'Create a new seeder class';
 
     /**
      * The type of class being generated.

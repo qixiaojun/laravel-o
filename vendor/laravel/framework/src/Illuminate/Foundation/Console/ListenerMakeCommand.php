@@ -20,7 +20,7 @@ class ListenerMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的事件监听器类';
+    protected $description = 'Create a new event listener class';
 
     /**
      * The type of class being generated.
@@ -37,7 +37,7 @@ class ListenerMakeCommand extends GeneratorCommand
     public function fire()
     {
         if (! $this->option('event')) {
-            return $this->error('缺少必需的选项: --event');
+            return $this->error('Missing required option: --event');
         }
 
         parent::fire();
@@ -103,9 +103,9 @@ class ListenerMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['event', null, InputOption::VALUE_REQUIRED, '事件类被监听到。'],
+            ['event', null, InputOption::VALUE_REQUIRED, 'The event class being listened for.'],
 
-            ['queued', null, InputOption::VALUE_NONE, '表示事件监听器应该排队。'],
+            ['queued', null, InputOption::VALUE_NONE, 'Indicates the event listener should be queued.'],
         ];
     }
 }

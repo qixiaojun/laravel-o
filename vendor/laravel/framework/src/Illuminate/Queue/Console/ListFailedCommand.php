@@ -19,7 +19,7 @@ class ListFailedCommand extends Command
      *
      * @var string
      */
-    protected $description = '列出所有队列失败的工作';
+    protected $description = 'List all of the failed queue jobs';
 
     /**
      * The table headers for the command.
@@ -38,7 +38,7 @@ class ListFailedCommand extends Command
         $jobs = $this->getFailedJobs();
 
         if (count($jobs) == 0) {
-            return $this->info('没有失败的工作!');
+            return $this->info('No failed jobs!');
         }
 
         $this->displayFailedJobs($jobs);

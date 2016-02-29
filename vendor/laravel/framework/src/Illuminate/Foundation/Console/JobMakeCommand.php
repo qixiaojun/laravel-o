@@ -19,7 +19,7 @@ class JobMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的工作类';
+    protected $description = 'Create a new job class';
 
     /**
      * The type of class being generated.
@@ -61,7 +61,7 @@ class JobMakeCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['sync', null, InputOption::VALUE_NONE, '表明那个工作应该是同步的。'],
+            ['sync', null, InputOption::VALUE_NONE, 'Indicates that job should be synchronous.'],
         ];
     }
 }

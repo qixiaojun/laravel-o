@@ -19,7 +19,7 @@ class RouteClearCommand extends Command
      *
      * @var string
      */
-    protected $description = '删除路由的缓存文件';
+    protected $description = 'Remove the route cache file';
 
     /**
      * The filesystem instance.
@@ -50,6 +50,6 @@ class RouteClearCommand extends Command
     {
         $this->files->delete($this->laravel->getCachedRoutesPath());
 
-        $this->info('路由缓存清除!');
+        $this->info('Route cache cleared!');
     }
 }

@@ -22,7 +22,7 @@ class OptimizeCommand extends Command
      *
      * @var string
      */
-    protected $description = '优化框架为了更好的性能';
+    protected $description = 'Optimize the framework for better performance';
 
     /**
      * The composer instance.
@@ -117,9 +117,9 @@ class OptimizeCommand extends Command
     protected function getOptions()
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, '强迫编译后的类文件编写。'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the compiled class file to be written.'],
 
-            ['psr', null, InputOption::VALUE_NONE, '不优化Composer(作曲家)dump-autoload(自动转储)。'],
+            ['psr', null, InputOption::VALUE_NONE, 'Do not optimize Composer dump-autoload.'],
         ];
     }
 }

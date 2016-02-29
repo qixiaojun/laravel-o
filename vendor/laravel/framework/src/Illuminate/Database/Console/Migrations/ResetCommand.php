@@ -23,7 +23,7 @@ class ResetCommand extends Command
      *
      * @var string
      */
-    protected $description = '回滚所有数据库迁移';
+    protected $description = 'Rollback all database migrations';
 
     /**
      * The migrator instance.
@@ -59,7 +59,7 @@ class ResetCommand extends Command
         $this->migrator->setConnection($this->input->getOption('database'));
 
         if (! $this->migrator->repositoryExists()) {
-            $this->output->writeln('<comment>迁移表未找到。</comment>');
+            $this->output->writeln('<comment>Migration table not found.</comment>');
 
             return;
         }
@@ -84,11 +84,11 @@ class ResetCommand extends Command
     protected function getOptions()
     {
         return [
-            ['database', null, InputOption::VALUE_OPTIONAL, '要使用的数据库连接。'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'],
 
-            ['force', null, InputOption::VALUE_NONE, '在生产时力的操作运行。'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
 
-            ['pretend', null, InputOption::VALUE_NONE, '转储将运行的SQL查询。'],
+            ['pretend', null, InputOption::VALUE_NONE, 'Dump the SQL queries that would be run.'],
         ];
     }
 }

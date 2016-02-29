@@ -18,7 +18,7 @@ class MiddlewareMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的中间件类';
+    protected $description = 'Create a new middleware class';
 
     /**
      * The type of class being generated.

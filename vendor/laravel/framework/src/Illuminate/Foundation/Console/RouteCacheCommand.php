@@ -20,7 +20,7 @@ class RouteCacheCommand extends Command
      *
      * @var string
      */
-    protected $description = '创建一个更快注册路线的路由缓存文件';
+    protected $description = 'Create a route cache file for faster route registration';
 
     /**
      * The filesystem instance.
@@ -54,7 +54,7 @@ class RouteCacheCommand extends Command
         $routes = $this->getFreshApplicationRoutes();
 
         if (count($routes) == 0) {
-            return $this->error("应用程序没有任何路由。");
+            return $this->error("Your application doesn't have any routes.");
         }
 
         foreach ($routes as $route) {
@@ -65,7 +65,7 @@ class RouteCacheCommand extends Command
             $this->laravel->getCachedRoutesPath(), $this->buildRouteCacheFile($routes)
         );
 
-        $this->info('路由缓存成功!');
+        $this->info('Routes cached successfully!');
     }
 
     /**

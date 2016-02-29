@@ -160,8 +160,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         //Overtrue\LaravelLang\TranslationServiceProvider::class,
         //Dingo\Api\Provider\LaravelServiceProvider::class,
-        //LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
-        //LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
+        // LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+        // LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 
     ],
 

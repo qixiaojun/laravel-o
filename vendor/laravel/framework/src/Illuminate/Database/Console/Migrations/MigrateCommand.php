@@ -22,7 +22,7 @@ class MigrateCommand extends BaseCommand
      *
      * @var string
      */
-    protected $description = '运行数据库迁移';
+    protected $description = 'Run the database migrations';
 
     /**
      * The migrator instance.
@@ -115,17 +115,17 @@ class MigrateCommand extends BaseCommand
     protected function getOptions()
     {
         return [
-            ['database', null, InputOption::VALUE_OPTIONAL, '要使用的数据库连接。'],
+            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'],
 
-            ['force', null, InputOption::VALUE_NONE, '在生产时力的操作运行。'],
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
 
-            ['path', null, InputOption::VALUE_OPTIONAL, '执行迁移文件的路径。'],
+            ['path', null, InputOption::VALUE_OPTIONAL, 'The path of migrations files to be executed.'],
 
-            ['pretend', null, InputOption::VALUE_NONE, '转储将运行的SQL查询。'],
+            ['pretend', null, InputOption::VALUE_NONE, 'Dump the SQL queries that would be run.'],
 
-            ['seed', null, InputOption::VALUE_NONE, '表明如果种子任务应该重新运行。'],
+            ['seed', null, InputOption::VALUE_NONE, 'Indicates if the seed task should be re-run.'],
 
-            ['step', null, InputOption::VALUE_NONE, '强迫迁移运行所以他们可以单独回滚。'],
+            ['step', null, InputOption::VALUE_NONE, 'Force the migrations to be run so they can be rolled back individually.'],
         ];
     }
 }

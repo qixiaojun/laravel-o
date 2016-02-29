@@ -18,7 +18,7 @@ class ProviderMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = '创建一个新的服务提供者类';
+    protected $description = 'Create a new service provider class';
 
     /**
      * The type of class being generated.

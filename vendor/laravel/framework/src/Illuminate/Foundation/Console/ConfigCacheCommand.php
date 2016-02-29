@@ -19,7 +19,7 @@ class ConfigCacheCommand extends Command
      *
      * @var string
      */
-    protected $description = '创建一个缓存文件使配置加载更快';
+    protected $description = 'Create a cache file for faster configuration loading';
 
     /**
      * The filesystem instance.
@@ -56,7 +56,7 @@ class ConfigCacheCommand extends Command
             $this->laravel->getCachedConfigPath(), '<?php return '.var_export($config, true).';'.PHP_EOL
         );
 
-        $this->info('成功配置缓存!');
+        $this->info('Configuration cached successfully!');
     }
 
     /**

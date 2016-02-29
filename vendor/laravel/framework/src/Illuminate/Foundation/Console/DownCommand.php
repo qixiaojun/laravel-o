@@ -18,7 +18,7 @@ class DownCommand extends Command
      *
      * @var string
      */
-    protected $description = '把应用程序进入维护模式';
+    protected $description = 'Put the application into maintenance mode';
 
     /**
      * Execute the console command.
@@ -29,6 +29,6 @@ class DownCommand extends Command
     {
         touch($this->laravel->storagePath().'/framework/down');
 
-        $this->comment('应用程序现在已经在维护模式。');
+        $this->comment('Application is now in maintenance mode.');
     }
 }

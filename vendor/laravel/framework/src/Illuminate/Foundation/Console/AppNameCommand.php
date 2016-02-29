@@ -22,7 +22,7 @@ class AppNameCommand extends Command
      *
      * @var string
      */
-    protected $description = '设置应用程序的命名空间';
+    protected $description = 'Set the application namespace';
 
     /**
      * The Composer class instance.
@@ -279,7 +279,7 @@ class AppNameCommand extends Command
     protected function getArguments()
     {
         return [
-            ['name', InputArgument::REQUIRED, '所需的名称空间。'],
+            ['name', InputArgument::REQUIRED, 'The desired namespace.'],
         ];
     }
 }

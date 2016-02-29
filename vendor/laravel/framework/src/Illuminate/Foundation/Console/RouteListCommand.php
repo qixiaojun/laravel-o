@@ -24,7 +24,7 @@ class RouteListCommand extends Command
      *
      * @var string
      */
-    protected $description = '列出所有注册的路由';
+    protected $description = 'List all registered routes';
 
     /**
      * The router instance.
@@ -69,7 +69,7 @@ class RouteListCommand extends Command
     public function fire()
     {
         if (count($this->routes) == 0) {
-            return $this->error("你的应用程序没有任何路由。");
+            return $this->error("Your application doesn't have any routes.");
         }
 
         $this->displayRoutes($this->getRoutes());
@@ -226,15 +226,15 @@ class RouteListCommand extends Command
     protected function getOptions()
     {
         return [
-            ['method', null, InputOption::VALUE_OPTIONAL, '过滤路由的方法。'],
+            ['method', null, InputOption::VALUE_OPTIONAL, 'Filter the routes by method.'],
 
-            ['name', null, InputOption::VALUE_OPTIONAL, '过滤路由的名字。'],
+            ['name', null, InputOption::VALUE_OPTIONAL, 'Filter the routes by name.'],
 
-            ['path', null, InputOption::VALUE_OPTIONAL, '过滤路由的路径。'],
+            ['path', null, InputOption::VALUE_OPTIONAL, 'Filter the routes by path.'],
 
-            ['reverse', 'r', InputOption::VALUE_NONE, '反向的路由顺序'],
+            ['reverse', 'r', InputOption::VALUE_NONE, 'Reverse the ordering of the routes.'],
 
-            ['sort', null, InputOption::VALUE_OPTIONAL, '列(主机、方法、uri、名称、行动、中间件)进行排序。', 'uri'],
+            ['sort', null, InputOption::VALUE_OPTIONAL, 'The column (host, method, uri, name, action, middleware) to sort by.', 'uri'],
         ];
     }
 }

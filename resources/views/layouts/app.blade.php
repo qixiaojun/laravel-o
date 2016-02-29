@@ -54,7 +54,7 @@
 </nav>
 @yield('content')
 @section('js')
-<script src="/asset/jquery/node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+<script src="/asset/bower/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script src="/asset/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
 @show{{-- body区域javscript脚本 --}}
 @stop

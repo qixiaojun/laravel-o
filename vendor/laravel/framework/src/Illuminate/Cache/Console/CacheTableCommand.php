@@ -20,7 +20,7 @@ class CacheTableCommand extends Command
      *
      * @var string
      */
-    protected $description = '创建一个缓存数据库表的迁移';
+    protected $description = 'Create a migration for the cache database table';
 
     /**
      * The filesystem instance.
@@ -60,7 +60,7 @@ class CacheTableCommand extends Command
 
         $this->files->put($fullPath, $this->files->get(__DIR__.'/stubs/cache.stub'));
 
-        $this->info('迁移创建成功!');
+        $this->info('Migration created successfully!');
 
         $this->composer->dumpAutoloads();
     }

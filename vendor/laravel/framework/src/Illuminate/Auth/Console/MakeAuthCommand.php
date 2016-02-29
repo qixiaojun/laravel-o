@@ -14,14 +14,14 @@ class MakeAuthCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:auth {--views : 只搭建身份验证视图}';
+    protected $signature = 'make:auth {--views : Only scaffold the authentication views}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '搭建基本的登录和注册的视图和路由';
+    protected $description = 'Scaffold basic login and registration views and routes';
 
     /**
      * The views that need to be exported.
@@ -51,14 +51,14 @@ class MakeAuthCommand extends Command
         $this->exportViews();
 
         if (! $this->option('views')) {
-            $this->info('HomeController(首页控制器)安装。');
+            $this->info('Installed HomeController.');
 
             file_put_contents(
                 app_path('Http/Controllers/HomeController.php'),
                 $this->compileControllerStub()
             );
 
-            $this->info('路由文件已更新。');
+            $this->info('Updated Routes File.');
 
             file_put_contents(
                 app_path('Http/routes.php'),
@@ -67,7 +67,7 @@ class MakeAuthCommand extends Command
             );
         }
 
-        $this->comment('身份验证脚手架生成成功!');
+        $this->comment('Authentication scaffolding generated successfully!');
     }
 
     /**
@@ -100,7 +100,7 @@ class MakeAuthCommand extends Command
         foreach ($this->views as $key => $value) {
             $path = base_path('resources/views/'.$value);
 
-            $this->line('<info>创建视图:</info> '.$path);
+            $this->line('<info>Created View:</info> '.$path);
 
             copy(__DIR__.'/stubs/make/views/'.$key, $path);
         }

@@ -12,17 +12,17 @@ class MigrateMakeCommand extends BaseCommand
      *
      * @var string
      */
-    protected $signature = 'make:migration {name : 迁移的名字。}
-        {--create= : 要创建的表。}
-        {--table= : 迁移的表。}
-        {--path= : 应该创建迁移文件的位置。}';
+    protected $signature = 'make:migration {name : The name of the migration.}
+        {--create= : The table to be created.}
+        {--table= : The table to migrate.}
+        {--path= : The location where the migration file should be created.}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '创建一个新的迁移文件';
+    protected $description = 'Create a new migration file';
 
     /**
      * The migration creator instance.
@@ -95,7 +95,7 @@ class MigrateMakeCommand extends BaseCommand
 
         $file = pathinfo($this->creator->create($name, $path, $table, $create), PATHINFO_FILENAME);
 
-        $this->line("<info>创建迁移:</info> $file");
+        $this->line("<info>Created Migration:</info> $file");
     }
 
     /**

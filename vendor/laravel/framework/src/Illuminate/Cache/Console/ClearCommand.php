@@ -20,7 +20,7 @@ class ClearCommand extends Command
      *
      * @var string
      */
-    protected $description = '刷新应用程序缓存';
+    protected $description = 'Flush the application cache';
 
     /**
      * The cache manager instance.
@@ -57,7 +57,7 @@ class ClearCommand extends Command
 
         $this->laravel['events']->fire('cache:cleared', [$storeName]);
 
-        $this->info('应用程序缓存清除!');
+        $this->info('Application cache cleared!');
     }
 
     /**
@@ -68,7 +68,7 @@ class ClearCommand extends Command
     protected function getArguments()
     {
         return [
-            ['store', InputArgument::OPTIONAL, '像你想清除的商店的名字'],
+            ['store', InputArgument::OPTIONAL, 'The name of the store you would like to clear.'],
         ];
     }
 }
